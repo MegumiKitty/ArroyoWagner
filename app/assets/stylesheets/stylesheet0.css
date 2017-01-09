@@ -1,0 +1,9 @@
+/* This is to hide fields */
+.cant-see-me{
+	display:none;
+}
+
+/* This makes form fields 100%*/
+.make-it-wide{
+	width: 85%;
+}

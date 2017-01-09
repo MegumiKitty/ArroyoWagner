@@ -1,0 +1,20 @@
+<div class="container" style="padding-top: 10%">
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<%= @regret.user.name %> said:
+	</div>
+	<div class="panel-body">
+		<%= @regret.message %>
+	</div>
+	<div class="panel-footer ">
+		<div class="btn-group btn-group-sm" >
+			<% if current_user.id == @regret.user.id %>
+				<%= link_to 'Edit', edit_regret_path(@regret), class: "btn btn-default" %>
+			<% end %>
+			<%= link_to 'Back', regrets_path, class: "btn btn-default" %>
+		</div>	 
+	</div>
+</div>
+
+
+

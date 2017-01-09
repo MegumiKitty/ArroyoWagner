@@ -1,0 +1,17 @@
+<div class="container" style="padding-top: 10%">
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<%= @guest_book.user.name %> said:
+	</div>
+	<div class="panel-body">
+		<%= @guest_book.post %>
+	</div>
+	<div class="panel-footer">
+		<div class="btn-group btn-group-sm" >
+			<% if current_user.id == @guest_book.user.id %>
+				<%= link_to 'Edit', edit_guest_book_path(@guest_book), class: "btn btn-default" %>
+			<% end %> 
+			<%= link_to 'Back', guest_books_path, class: "btn btn-default" %>
+		</div>
+	</div>
+</div>

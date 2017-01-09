@@ -1,0 +1,26 @@
+
+<%= form_for(guest_book) do |f| %>
+  <% if guest_book.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(guest_book.errors.count, "error") %> prohibited this guest_book from being saved:</h2>
+
+      <ul>
+      <% guest_book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group cant-see-me">
+    <%= f.number_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="form-group">
+    <%= f.text_area :post, placeholder: "Leave a message for the bride and groom." %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

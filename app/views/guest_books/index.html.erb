@@ -1,0 +1,25 @@
+<div class="jumbotron">
+  <h2>Jessica and William</h2>
+</div>
+<div class="row">
+  <% @guest_books.each do |guest_book| %>
+    <div class="col-xs-6" style="width: 100%;">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <%= guest_book.user.name %> said:
+        </div>
+        <div class="panel-body">
+          <%= guest_book.post[0..250] %>... <%= link_to 'Read More', guest_book %>
+        </div>
+        <div class="panel-footer">
+          <div class=" btn-group btn-group-small" >
+            <% if current_user.id == guest_book.user.id %>
+              <%= link_to 'Edit', edit_guest_book_path(guest_book), class: "btn btn-default" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
